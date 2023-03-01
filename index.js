@@ -14,7 +14,7 @@ const readline = require('readline');
  * (https://github.com/MD-Anderson-Bioinformatics/NG-CHM)
  */
 const filepath = core.getInput('file_path');
-core.debug(`Searching file: ${filepath}`);
+core.debug(`Searching for version number in file: ${filepath}`);
 const filename = `${process.env.GITHUB_WORKSPACE}/${filepath}`
 
 const startString = core.getInput('start_string');
@@ -29,7 +29,8 @@ rl.on('line', (line) => {
   if (line.startsWith(startString)) {
     core.debug(`found line starting with start_string: ${line}`);
     let version_number = line.replace(/^[^0-9]+|[^0-9]+$/g, "")
-    core.notice(`Found version number: ${version_number}`);
+    core.notice(`Found version number in file: ${filepath}`);
+    core.notice(`Version number: ${version_number}`);
     core.setOutput("version_number", version_number);
   }
 });
