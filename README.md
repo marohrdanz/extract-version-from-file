@@ -16,7 +16,7 @@ the [NG=CHM Viewer repo](https://github.com/MD-Anderson-Bioinformatics/NG-CHM).
 ## Example usage
 
 In order to use this action, the repo must have already been checked out
-(e.g. via [GitHub Checkout Action](https://github.com/marketplace/actions/checkout).
+(e.g. via [GitHub Checkout Action](https://github.com/marketplace/actions/checkout).)
 
 ```yaml
 uses: marohrdanz/extract-version-from-file
