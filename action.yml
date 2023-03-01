@@ -1,0 +1,15 @@
+name: 'Get version number from file'
+description: 'Extremely fragile action to extract a version number from a file'
+inputs:
+  file_path:
+    description: 'Path to file containing version number'
+    required: true
+  start_string:
+    description: 'String for start of line containing version number'
+    required: true
+outputs:
+  version_number:
+    description: 'Found version number'
+runs:
+  using: 'node16'
+  main: 'index.js'
