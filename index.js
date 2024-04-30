@@ -17,7 +17,7 @@ const filepath = core.getInput('file_path');
 core.debug(`Searching for version number in file: ${filepath}`);
 const filename = `${process.env.GITHUB_WORKSPACE}/${filepath}`
 
-const searchString = core.getInput('start_string');
+const searchString = core.getInput('search_string');
 core.debug(`Searching for line containing: ${searchString}`);
 
 const rl = readline.createInterface({
