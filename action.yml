@@ -4,8 +4,8 @@ inputs:
   file_path:
     description: 'Path to file containing version number'
     required: true
-  start_string:
-    description: 'String for start of line containing version number'
+  search_string:
+    description: 'Search string for line containing version number'
     required: true
 outputs:
   version_number:

@@ -8,7 +8,7 @@ not be useful in general.
 ## Inputs
 
 - `file_path`: Path in repo to file containing version number
-- `start_string`: Starting characters of line containing version number
+- `search_string`: Search string for line containing version number
 
 ## Outputs
 
@@ -20,12 +20,12 @@ In order to use this action, the repo must have already been checked out
 (e.g. via [GitHub Checkout Action](https://github.com/marketplace/actions/checkout).)
 
 This example will search the repo file NG-CHM/NGCHM/WebContent/javascript/CompatibilityManager.js for the
-line that starts with 'CM.version = ' and extract the version number.
+line that contains 'CM.version = ' and extract the version number.
 
 ```yaml
 uses: marohrdanz/extract-version-from-file
 with:
   file_path: 'NG-CHM/NGCHM/WebContent/javascript/CompatibilityManager.js'
-  start_string: 'CM.version = '
+  search_string: 'CM.version = '
 ```
 
