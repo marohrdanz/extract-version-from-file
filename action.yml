@@ -11,5 +11,5 @@ outputs:
   version_number:
     description: 'Found version number'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'index.js'
