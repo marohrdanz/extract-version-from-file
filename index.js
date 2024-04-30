@@ -27,7 +27,7 @@ const rl = readline.createInterface({
 
 let found = false;
 rl.on('line', (line) => {
-  if (line.includes(searchString)) {
+  if (line.includes(searchString) && !line.startsWith("  //")) {
     core.debug(`found line containing search_string: ${line}`);
     let version_number = line.replace(/^[^0-9]+|[^0-9]+$/g, "")
     core.notice(`Found version number '${version_number}' in file: ${filepath}`);
@@ -37,6 +37,8 @@ rl.on('line', (line) => {
 }).on('close', () => {
   if (!found) {
     core.warning(`No line found containing search_string: ${searchString}`);
+  } else {
+    core.debug(`Version number found in file: ${filepath}`);
   }
 })
 
