@@ -31,7 +31,9 @@ rl.on('line', (line) => {
     let version_number = line.replace(/^[^0-9]+|[^0-9]+$/g, "")
     core.notice(`Found version number '${version_number}' in file: ${filepath}`);
     core.setOutput("version_number", version_number);
+    return;
   }
 });
 
+core.warning(`No line found starting with start_string: ${startString}`);
 
